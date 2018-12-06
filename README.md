@@ -117,6 +117,7 @@ You can change only one row in the pivot table with updateExistingPivot.
 
 **sync()**
 Dispatches **one** **pivotSyncing** and **one** **pivotSynced** event.
+If sync() is called but rows are not added or deleted events are not dispatch===
 
 
 ## Usage
@@ -252,9 +253,6 @@ roles
 
 
 ### Syncing
-
-For sync() method event is dispatched for each pivot row.
-
 Running this code
 ```
 $user = User::first();

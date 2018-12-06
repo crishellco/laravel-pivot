@@ -23,7 +23,9 @@ trait FiresPivotEventsTrait
         if (!$this->isSyncing) {
             $this->parent->fireModelEvent('pivotAttaching', true, $this->getRelationName(), $idsOnly, $idsAttributes);
         }
+
         $parentResult = parent::attach($ids, $attributes, $touch);
+
         if (!$this->isSyncing) {
             $this->parent->fireModelEvent('pivotAttached', false, $this->getRelationName(), $idsOnly, $idsAttributes);
         }
@@ -47,10 +49,12 @@ trait FiresPivotEventsTrait
 
         list($idsOnly) = $this->getIdsWithAttributes($ids);
 
-        if(!$this->isSyncing) {
+        if (!$this->isSyncing) {
             $this->parent->fireModelEvent('pivotDetaching', true, $this->getRelationName(), $idsOnly);
         }
+
         $parentResult = parent::detach($ids, $touch);
+
         if (!$this->isSyncing) {
             $this->parent->fireModelEvent('pivotDetached', false, $this->getRelationName(), $idsOnly);
         }
