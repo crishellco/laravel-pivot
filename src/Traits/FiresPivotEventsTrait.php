@@ -27,7 +27,7 @@ trait FiresPivotEventsTrait
         $parentResult = parent::attach($ids, $attributes, $touch);
 
         if (!$this->isSyncing) {
-            $this->parent->fireModelEvent('pivotAttached', true, $this->getRelationName(), $idsOnly, $idsAttributes);
+            $this->parent->fireModelEvent('pivotAttached', false, $this->getRelationName(), $idsOnly, $idsAttributes);
         }
 
         return $parentResult;
