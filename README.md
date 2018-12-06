@@ -117,7 +117,7 @@ You can change only one row in the pivot table with updateExistingPivot.
 
 **sync()**
 Dispatches **one** **pivotSyncing** and **one** **pivotSynced** event.
-If sync() is called but rows are not added or deleted events are not dispatched.
+If sync() is called but rows are not added or deleted events are not dispatch===
 
 
 ## Usage
